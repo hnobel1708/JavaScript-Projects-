@@ -1,0 +1,13 @@
+//setting a constant for Kelvin 
+const kelvin = 0; 
+
+// claculation to convert to celsius
+let celsius = kelvin - 273; 
+
+// converting from celsius to fahrenheit
+let fahrenheit = celsius * (9/5) + 32; 
+
+// converting to fahrenheit rounded up 
+console.log(Math.floor(fahrenheit));
+
+console.log(`The temperature is ${fahrenheit} degrees Fahrenheit.`)
