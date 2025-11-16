@@ -1,0 +1,27 @@
+// myAge is a variable showing my age
+let myAge = 19; 
+
+// a variable that can be changed later
+let earlyYears = 2;  
+
+earlyYears * 10.5; 
+
+// subtracting 2 from myAge
+let laterYears = myAge -2; 
+
+// times by 4 to get dog age
+laterYears * 4; 
+
+console.log(earlyYears); 
+console.log(laterYears); 
+
+// adding earlyyears and lateryears together 
+let myAgeInDogYears = earlyYears + laterYears; 
+
+// stores name of User
+let myName = "Lesah"
+myName.toLowerCase(); 
+
+
+console.log(`My name is ${myName}. I am ${myAge} years old in human years, which is ${myAgeInDogYears} years old in dog years.`); 
+
