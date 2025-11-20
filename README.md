@@ -3,4 +3,4 @@ Contents of Projects:
 2. Dog Years
 3. Magic 8 Ball 
 4. Race Day 
-5.Rock, Paper Scissors 
+5. Rock, Paper Scissors 
