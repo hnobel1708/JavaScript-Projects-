@@ -4,3 +4,4 @@ Contents of Projects:
 3. Magic 8 Ball 
 4. Race Day 
 5. Rock, Paper Scissors 
+6. Sleep Debt Calculator
