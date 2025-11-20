@@ -1,0 +1,13 @@
+let hours = 7; 
+let ideal = 8; 
+
+console.log("Actual sleep:", hours);
+console.log("Ideal sleep:", ideal);
+
+if (hours === ideal) {
+  console.log("You got the perfect amount of sleep!");
+} else if (hours > ideal) {
+  console.log("You got more sleep than needed.");
+} else {
+  console.log("You need more rest- you need sleep")
+}
