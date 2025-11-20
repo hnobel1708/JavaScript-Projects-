@@ -1,0 +1,23 @@
+let player = "rock"; 
+let computer = ""; 
+
+let r = Math.floor(Math.random() * 3);
+
+if (r === 0) computer = "rock";
+else if (r === 1) computer = "paper";
+else computer = "scissors";
+
+console.log("Player:", player)
+console.log("Computer:", computer);
+
+if (player === computer) {
+  console.log("Tie!");
+} else if (
+  (player === "rock" && computer === "scissors")||
+  (player === "paper" && computer === "rock")||
+  (player === "scissors" && computer === "paper")
+){
+  console.log("You win!");
+} else {
+  console.log("You lose!");
+}
