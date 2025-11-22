@@ -1,0 +1,33 @@
+let day = "Monday"; 
+
+console.log("Today is: ", day); 
+
+if (day === "Monday") {
+  let workout = "Leg Day"; 
+  console.log("Workout: ", workout); 
+}
+
+if (day === "Wednesday"){
+  let workout = "Core + Abs"; 
+  console.log("Workout: ", workout); 
+}
+
+if (day === "Thursday"){
+  let workout = "Arms + Shoulders"; 
+  console.log("Workout:", workout); 
+}
+
+if (day === "Friday"){
+  let workout = "Full Body"; 
+  console.log("Workout:", workout); 
+}
+
+if (day === "Saturday") { 
+  let workout = "Cardio Day"; 
+  console.log("Workout: ", workout);
+}
+
+if (day === "Sunday"){
+  let workout = "Rest + Recovery";
+  console.log("Workout: ", workout); 
+}
