@@ -6,3 +6,4 @@ Contents of Projects:
 5. Rock, Paper Scissors 
 6. Sleep Debt Calculator
 7. Training Days
+8. Secret Message Generator
