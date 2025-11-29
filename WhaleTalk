@@ -1,0 +1,27 @@
+const vowels = ['a', 'e', 'i', 'o', 'u']; 
+
+const longVowels = ['e','o']; 
+
+function whaleTalk(input){
+  input = input.toLowerCase();
+  let result = []; 
+}
+
+for (let i = 0; i < input.length; i++){
+  let char = input[i]; 
+
+  for (let j = 0; j < vowels.length; j++){
+    if (char === vowels[j]){
+      result.push(char);
+
+      if (longVowels.includes(char)){
+        result.push(char); 
+      }
+    }
+  }
+  return result.join(''); 
+}
+
+console.log(whaleTalk("Hello World")); 
+console.log(whaleTalk("Whales are amzing")); 
+console.log(whaleTalk("Ocean language")); 
