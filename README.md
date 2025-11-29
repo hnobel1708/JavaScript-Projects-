@@ -7,3 +7,4 @@ Contents of Projects:
 6. Sleep Debt Calculator
 7. Training Days
 8. Secret Message Generator
+9. Whale Talk
