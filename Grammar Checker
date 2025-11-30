@@ -1,0 +1,15 @@
+function sentenceTokenizer(text){
+  text = text.replace(/\s+/g,"").trim(); 
+
+  const sentenceRegex = /[^.!?]+[.!?]?/g; 
+
+  const matches = text.match(sentenceRegex); 
+  if (!matches) return; 
+
+  for (const sentence of matches) {
+    const cleaned = sentence.trim(); 
+    if (cleaned.length > 0) {
+      yield cleaned; 
+    }
+  }
+}
