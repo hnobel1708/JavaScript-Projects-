@@ -8,3 +8,4 @@ Contents of Projects:
 7. Training Days
 8. Secret Message Generator
 9. Whale Talk
+10. Grammar Checker
