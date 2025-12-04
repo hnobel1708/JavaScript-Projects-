@@ -1,0 +1,67 @@
+const ingredients = {
+  tomato: {calories : 18, type: "vegetable", color: "red"},
+  chicken: {calories: 165, type: "protein", color: "white"},
+  rice: {calories: 165, type: "protein", color: "white"}, 
+  spinach: {calories: 23, type: "vegetable", color: "green"}, 
+  egg: {calories: 78, type: "protein", color: "white"}, 
+  beef: {calories: 217, type: "protein", color: "red"},
+  corn: {calories: 86, type: "vegetable", color: "yellow"}
+}; 
+
+const IngredientLookUp = {
+  get(name){
+    return ingredients[name] || null; 
+  },
+
+  findByType(type) {
+    return Object.entries(ingredients)
+    .filter(([_, data]) => data.type === type)
+    .map(([name, data]) => ({ name, ...data})); 
+  },
+
+  findByCalories(min, max) {
+    return Object.entries(ingredients)
+    .filter(([_,data]) => data.calories >= min && data.calories <= max)
+    .map(([name, data]) => ({name, ...data})); 
+  }, 
+
+  random() {
+    const keys = Object.keys(ingredients);
+    const choice = keys [Math.floor(Math.random() * keys.length)]; 
+    return {name: choice, ...ingredients[choice]}; 
+  }, 
+
+  addIngredient(name, data) {
+    if (ingredients[name]) {
+      return false;
+    }
+    ingredients[name] = data; 
+    return true; 
+    }, 
+  
+  removeIngredient(name) {
+    if (!ingredients[name]) return false; 
+    delete ingredients[name]; 
+    return true; 
+  }
+}; 
+
+console.log("Tomato info:"); 
+console.log(IngredientLookup.get("tomato")); 
+
+console.log("\nAll proteins:"); 
+console.log(IngredientLookup.findByType("protein")); 
+
+console.log("\nLow calorie options (0-50):"); 
+console.log(IngredientLookup.findByCalories(0,50)); 
+
+console.log("\nRandom ingredient:"); 
+console.log(IngredientLookup.random()); 
+
+console.log("\Add new ingredient (avocado):");
+IngredientLookup.addIngredient("avocado",{calories: 160, type: "fat", color: "green"}); 
+console.log(IngredientLookup.get("avocado")); 
+
+console.log("\nremove ingredient (corn)"); 
+IngredientLookup.removeIngredient("corn"); 
+console.log(IngredientLookup.get("corn")); 
