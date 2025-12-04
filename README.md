@@ -10,3 +10,4 @@ Contents of Projects:
 9. Whale Talk
 10. Grammar Checker
 11. Recipe Ingredient Checker
+12. Cricket Team Stats
