@@ -1,0 +1,112 @@
+const team = {
+  _players: [
+    {firstName: "Virat", lastName: "Kohli", age: 37, role: "Right Hand Batsman"}; 
+    {firstName: "Jasprit", lastName: "Bumrah", age: 31, position:"Pace Bowler"}, 
+    {firstName: "Hardik", lastName:"Pandya", age: 32, position: "All Rounder"}
+  ],
+
+  _matches: [{opponent: "Australia", runsFor: 245, runs Against: 231, wicketsLost: 7, oversPlayed: 50}; 
+  {opponent: "South Africa", runsFor: 198, runsAgainst: 198, wicketsLost: 10, oversPlayed: 50},
+  {opponent: "England", runsFor: 302, runsAgainst: 280, wicketsLost:6, oversPlayed: 50} ], 
+
+  get players(){
+    return this._players; 
+  }, 
+
+  addPlayer(firstname, lastName, age, role){
+    this.players.push({firstName, lastname, age, role}); 
+  }; 
+
+  findPlayer(name) {
+    return (
+      this.players.fund(
+        p => p.firstName === name || p.lastName === name) || null
+    ); 
+  }, 
+  
+  get matches() {
+    return this._matches;
+  }, 
+
+  addmatch(opponent, runsFor, runsAgainst, wicketsLost, oversPlayed) {
+    this._matches.push({opponent, runsFor, runs Against, wicketsLost, oversPlayed}); 
+  }, 
+  totalRuns(){
+    return this._matches.reduce((sum, m) => sum + m.runsFor, 0); 
+  }, 
+  averageRuns() {
+    return (this.totalRuns() / this._matches.length).toFixed(2); 
+  }, 
+  bestBattingPerformance(){
+    return this._matches.reduce((best, match) => {
+      return match.runsFor > best.runsFor ? match: best; 
+    }); 
+  }, 
+
+  bestBowlingDefence() {
+    return this._matches.reduce((best, match) => {
+      return match.runsAgainst < best.runsAgainst ? match: best; 
+    }); 
+  }, 
+
+  runRate(match){
+    return(match.runsFor / match.oversPlayed).toFixed(2);
+  }, 
+
+  overallRunRate() {
+    const totalRuns = this.totalRuns(); 
+    const totalOvers = this._matches.reduce((sum, m) => sum + m.oversPlayed, 0); 
+    return (totalRuns/ totalOvers).toFixed(2); 
+  }, 
+
+  matchResult(match){
+    if (match.runsFor > match.runsAgainst) return "Win"; 
+    if (match.runsFor < match.runsAgainst) return "Loss"; 
+    return "Tie"; 
+  }, 
+
+  record() {
+    let wins = 0 
+      losses = 0, 
+      ties = 0; 
+    for (const match of this._matches) {
+      const result = this.matchResult(match); 
+      if (result === "Win") wins++; 
+      else if (result === "Loss") losses ++;
+      else ties++; 
+    }
+
+    return {wins, losses, ties}; 
+  }
+}; 
+
+console.log("Initial Players: "); 
+console.log(cricketTeam.players); 
+
+console.log("\nAdding a new player:"); 
+cricketTeam.addPlayer("K.L","Rahul",23,"Wicketkeeper"); 
+console.log(cricketTeam.players); 
+
+console.log("\nFind a player (Ashwin):"); 
+console.log(cricketTeam.findPlayer("Ashwin")); 
+
+console.log("\nCurrent Matches"); 
+console.log(cricketTeam.matches); 
+
+console.log("\nTotal Runs Scored:"); 
+console.log(cricketTeam.totalRuns()); 
+
+console.log("\nAverage Runs Per Match:"); 
+console.log(cricketTeam.averageRuns()); 
+
+console.log("\nBest Batting Performance (highest score):");
+console.log(cricketTeam.bestBattingPerformance()); 
+
+console.log("\nBest Bowling Defense (fewest runs conceded):")
+console.log(cricketTeam.bestBowlingDefense());
+
+console.log("\nOverall Run Rate:"); 
+console.log(cricketTeam.overallRunRate()); 
+
+console.log("\nTeam Record (Wins-Losses-Ties):"); 
+console.log(cricketTeam.record()); 
